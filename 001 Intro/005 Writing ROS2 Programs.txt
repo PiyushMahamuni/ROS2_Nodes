@@ -27,3 +27,83 @@ STEP 2 -
 		source setup.bash
 		# there's also local_setup bash files, which only source the current ros2 workspace and not the global ros2 installation
 		# this is something you might want to do if you want to keep global ros2 installation isolated while working on your ros2 workspace
+
+
+STEP 3 -
+	
+	CREATE A PACKAGE
+	
+		In ROS2 there is a difference between a c++ package and python package and while using the CLI command to create a ROS2 package
+		you will use the argumente --build-type to specify which type of ros2 package you are creating.
+		You can also specify some dependencies with --dependecies argument. dependencies are simply packages that your current package
+		will need to work properly
+		
+	A] PYTHON PACKAGE
+		
+		commands
+		cd <ros2_workspace dir>/src
+	  	ros2 pkg create <package name> --build-type ament_python  --dependencies rclpy
+	  	# ament is the build system for python, rclpy is the ros2 python client library
+	  	
+	  	Now that you have created your python package, move to that dir. Inside that dir, you'll find another directory with the same name as
+	  	that of your package root directory along with /resource and /test directory
+	  	There will be another 3 files, package.xml (same as ROS1, contains metadata about package), setup.cfg and setup.py
+	  	setup.py and setup.cfg are files that come in handy while installing your written nodes in the ROS2 environment.
+	  	
+	  	Now your ros2 python package is ready to host your python nodes. You will write these nodes in <ros_package_dir>/<same name as package dir>
+	  	folder
+	
+	B] C++ PACKAGE
+	
+		move to <ros2 workspace directory>/src directory again. Create a new package with -
+		ros2 pkg create <package name> --build-type ament_cmake --dependencies rclcpp
+		# rcl cpp is the cpp client library of ros2 and ament_cmake is the build system for ros2 cpp packages
+		
+		Now your cpp ros2 package has been created, move to the created package and you'll see
+		src/ include/ CMakeLists.txt package.xml. That is the structure is quite different from ROS2 python package.
+		
+		# in C++ development environment, it is quite common to put your header files in `include` directory and your cpp files in `src` directory.
+		
+		
+	To build the package after creating/modifying it you just move to the root ros2 workspace directory and run `colcon build`
+	To just build a specific package out of whole ros2 workspace directory you can use --package-select argument with colcon build.
+	example - colcon build --package-select learning_py
+
+
+STEP 4-
+	
+	UNDERSTANDING WHAT IS ROS2 NODE?
+	
+		A node is sub part of your ROS2 application and should have a single purpose.Your application will likely to contain many nodes which will
+		be put into your packages. Nodes are capable of communication with each other.
+		
+		See 006 ROS2 environment architecture.png
+		
+		Summary -	
+		Nodes are
+		1. Subprograms in your application, usually (and should be) responsible for only one thing
+		2. Combined into a graph
+		3. Communicate with each other through topics, services and parameters
+		4. Nodes can't have the same name. (The name of the executable or python script within the package must be unique while the name
+		   nodes register themselves with in ROS environment must be unique in whole ROS ecosystem)
+		   		
+		Benefits of Using nodes -
+		1. Reduce code complexity
+		2. Fault Tolerance (fault in one node can't affect ros2 environment too adversely since other nodes are still running and though they
+		   might
+		   not be receiving correct data or be completely crashed, if other nodes are devloped fairly roboustly, your ros2 environment won't be
+		   affected too much adversely.
+		3. ROS2 is language agnostic. That means you can write its nodes in either c++, python and some other languages. This let's you borrow the
+		   already defined great libraries from python, C++ and other languages to serve that single purpose of your node.
+		   e.g. You might wanna devlop low level driver nodes or nodes whose operations are time sensetive/ very complex/ needs to be efficient
+		   while you might wann devlop high level decision making nodes/ GUI nodes/ image processing and ML deep learning nodes (since python
+		   has better support of client libraries and easier sytanx to devlop this applications) in python.
+
+
+STEP 5 -
+	
+	WRITING NODES
+		
+	A] PYTHON NODE
+
+*** INCOMPLETE ***
