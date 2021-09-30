@@ -1,0 +1,29 @@
+STEP 1-
+	
+	INSTALL THE ROS2 BUILD TOOL - COLCON
+		sudo apt install python3-colcon-common-extensions
+	
+	Now you can turn the autocompletion feature of colcon on which is disabled by default with -
+		cd /usr/share/colcon_argcomplete/hook/
+		ls  # you should see colcon-argcomplete.bash or .zsh like shell scripts
+		# just now source the colcon-argcomplete.bash to activate autocompletion feature of colcon for the current terminal
+		source colcon-argcomplete.bash
+		# this could be cumbersome doing everytime, I have just added this source line in my ros2 configuration shell script that I run with
+		# an alias confROS2 which sources the right setup.bash files and colcon-argcomplete.bash file
+
+STEP 2 -
+	
+	CREATE ROS2 WORKSPACE
+		mkdir -p <ros2 workspace path>/src
+		cd <ros2_workspace>
+		colcon build
+	Now you should have a successful build and have created the ros2_ws for all your related ros packages
+		ls # you will see all the folders and files created by the colcon build
+		build install log src
+		cd install/ && ls  # you should see all the installation related files and folders here,
+		# what interests us right now is the `setup` bash files. To activate your ros2 workspace and be able to run nodes
+		# off of this workspace and use ros2 tools with it, you need to source the respective setup bash file
+		# again, add this line to your ros2 configuration shell script
+		source setup.bash
+		# there's also local_setup bash files, which only source the current ros2 workspace and not the global ros2 installation
+		# this is something you might want to do if you want to keep global ros2 installation isolated while working on your ros2 workspace

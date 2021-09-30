@@ -1,0 +1,32 @@
+ROS2 is the successor of the ROS1. It has the same goals and core concepts as ROS1 while addressing some of the most pressing issues ROS1 faces
+becuase of it's architecture. ROS2 is similar to ROS1 but better with more functionalities.
+
+WHY ROS2?
+	- Provide a standard for robotic appliation just as ROS1
+	- Use on any robot (includes comprehensive support for real time application, integrating microcontrollers/embedded systems in ROS2 environment)
+	- Don't reinvent the wheel (same as ROS, provides tested libraries for most of common requirements in a robotics application)
+	- ROS2 just as with ROS1 abstracts all the low level logic and let's you focus more on the high level control (decision making) coding for the
+	  robot, with the authors and devlopers of ROS2 having had the comprehensive experience of building the ROS1 from scratch and facing
+	  difficulties, knowing it's limitation first hand, ROS2 is more stable, efficient and optimized client library.
+	  
+	  
+WHEN TO USE ROS2?
+	- The more complex your robotic application becomes, the more actuators, sensors, microcontrollers are in communication with each other,
+	  the exponentially difficult it becomes to write, debug and maintain software for these applications.
+	- ROS2 helps you develop powerful and scalable robotics applications. ROS2 allows you to create robot software which needs a lot of
+	  communication between its sub-programs or/and has some functionalities that go beyond very simple use case.
+
+WHAT IS ROS2?
+	It's quite difficult to express what is ROS2 in brief note, here are two main ideas about it anyway -
+	- Code separation and communication tools
+		ROS2 provides you with a way to seperate your code into reusable blocks along with set of communication tools to easily communicate
+		between all your subprograms.
+		Let's say that you are programming a mobile robot. You can create a subprogram called Node for your camera another for your navigation
+		algorithm, another one for your hardware driver, another one for joystick and so on.
+		And each of these independent blocks can communicate with each other in a way that is powerful and scalable.
+	
+	- ROS2 and ROS1 are said to be language agnostic. That is, you are provided with client libraries for C++, python and some other languages
+	  with which you can write parts of your robotic software. This means, you get to use different libraries already supported by these languages
+	  (like tkinter in python or matplotlib which makes it easier to visiualise data or make a GUI application)
+	
+	- ROS2 is also open source with active and growing community.

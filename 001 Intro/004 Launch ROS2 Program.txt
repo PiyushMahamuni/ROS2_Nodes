@@ -1,0 +1,4 @@
+The command for launching a ros2 program is -	
+	ros2 run <package name> <node executable file>
+
+* You don't have to start a roscore node, there isn't a master node in ROS2! You just simply start the node

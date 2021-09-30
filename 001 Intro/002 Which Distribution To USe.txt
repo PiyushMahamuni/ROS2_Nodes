@@ -1,0 +1,3 @@
+For this, you need to know the EOL date of the version. You'll find this info on ros.org website. for foxy fitzroy (currently the latest version) it is may 2023. After this, that version will no longer be supported. You will still be able to use it for your project, but with the learnings the authors, contributors and developers of ROS2 for a particular version, they will start a new version making better design and implementation decisions. Another thing you might want to check is if the version is LTS version. Long Time support versions are the ones which tends to be more mature in terms of libraries and functionalities and codes reviewed over and over and optimized to the maximum possible value.
+
+For this note, we will be using foxy fitzory

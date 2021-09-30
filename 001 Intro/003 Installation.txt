@@ -1,0 +1,25 @@
+ROS2 mainly support three operating systems -
+	Ubuntu
+	Mac OS
+	Windows 10
+
+
+In this notes, we will be using Ubuntu as the host machine for ROS2.
+	Tool that you may want to install -
+		Terminator ( an improved version of terminal )
+		Visual Studio Code
+
+
+*** INSTALL ROS2 FOXY FITZROY ON UBUNTU
+
+	Just go to the ros.org for ROS2 installation and follow the instructions.
+	https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html
+	
+	After complete installation, to be able to use ros2 and it's functionalities you'll have to setup environment variables
+	To do this, you just need to source the setup.bash file from your main installation location /opt/ros/foxy/setup.bash
+	*Make sure if you're using multiple versions of ros (ros1 and ros2) to carefully edit .bashrc if you've done so to not
+	source mismatching setup files and not setup environment variables for more than 1 version at the same time. This will cause
+	errors
+	
+	I have declared aliases for sourcing different versions of ros. That way I can still easily switch/create new terminals
+	while using ROS
